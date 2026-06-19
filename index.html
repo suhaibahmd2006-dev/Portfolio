@@ -856,11 +856,12 @@ footer{
 
       <div class="about-stats">
         <div class="stat-card">
-          <div class="stat-val">3</div>
+          <!-- Updated count to include all 5 of your active projects -->
+          <div class="stat-val">5</div>
           <div class="stat-label">Real GitHub Projects</div>
         </div>
         <div class="stat-card">
-          <div class="stat-val">2+</div>
+          <div class="stat-val">3+</div>
           <div class="stat-label">Languages Mastered</div>
         </div>
         <div class="stat-card">
@@ -938,8 +939,8 @@ footer{
           <div class="skill-bar"><div class="skill-fill" style="--w:0.68;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-top"><span>Python</span><span class="skill-pct">60%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.60;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
+          <div class="skill-top"><span>Python</span><span class="skill-pct">72%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.72;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-top"><span>File Handling / Data Processing</span><span class="skill-pct">65%</span></div>
@@ -1013,12 +1014,13 @@ footer{
   <div class="proj-filters">
     <button class="filter-btn active" data-lang="all" onclick="filterByLang(this,'all')">All</button>
     <button class="filter-btn" data-lang="HTML" onclick="filterByLang(this,'HTML')">HTML/CSS/JS</button>
+    <button class="filter-btn" data-lang="Python" onclick="filterByLang(this,'Python')">Python</button>
     <button class="filter-btn" data-lang="C++" onclick="filterByLang(this,'C++')">C++</button>
   </div>
 
   <div class="projects-grid" id="projects-grid">
 
-    <!-- FEATURED: E-Commerce -->
+    <!-- PROJECT 1: E-Commerce -->
     <div class="proj-card reveal" data-lang="HTML" data-name="sebi ecommerce storefront">
       <div class="proj-banner" style="background:linear-gradient(135deg,#1e3a5f,#1a2a4a)">
         🛍️
@@ -1056,7 +1058,7 @@ footer{
       </div>
     </div>
 
-    <!-- FEATURED: Pet Adoption -->
+    <!-- PROJECT 2: Pet Adoption -->
     <div class="proj-card reveal" data-lang="HTML" data-name="paws heaven ict pet adoption">
       <div class="proj-banner" style="background:linear-gradient(135deg,#1a3a2a,#0f2a1f)">
         🐾
@@ -1093,7 +1095,39 @@ footer{
       </div>
     </div>
 
-    <!-- Billing System -->
+    <!-- PROJECT 3: Guess The Number Game -->
+    <div class="proj-card reveal" data-lang="Python" data-name="guess the number game python terminal cli">
+      <div class="proj-banner" style="background:linear-gradient(135deg,#1e1b4b,#311042)">
+        🎲
+      </div>
+      <div class="proj-body">
+        <div class="proj-name">Guess The Number Game</div>
+        <div class="proj-desc">A highly refined Python terminal CLI logic game utilizing precise boundary constraints and nested conditional flows. Promotes interactive math reasoning through smart high/low hints and rigorous state-tracking parameters.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python 3</span>
+          <span class="proj-tag">CLI / Console</span>
+          <span class="proj-tag">Control Flow</span>
+          <span class="proj-tag">State Logic</span>
+          <span class="proj-tag">Randomization</span>
+        </div>
+        <ul style="font-size:.82rem;color:var(--muted);padding-left:1.2rem;margin:.5rem 0;line-height:2">
+          <li>Automated target generation ranging from $1$ to $100$</li>
+          <li>Strict constraints limiting players to exactly $12$ attempts</li>
+          <li>Dynamic Hot/Cold hints to guide search optimization</li>
+          <li>Comprehensive state-tracking preventing logic bleed-through</li>
+          <li>Independent post-evaluation showing the target on game over</li>
+        </ul>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://github.com/suhaibahmd2006-dev/Guess-The-Number-Game" target="_blank">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            GitHub
+          </a>
+          <div class="proj-stars">Python 100%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 4: Console Billing System -->
     <div class="proj-card reveal" data-lang="C++" data-name="billing system c++ console">
       <div class="proj-banner" style="background:linear-gradient(135deg,#2d1b3d,#1a0f2a)">
         🧾
@@ -1119,6 +1153,37 @@ footer{
             GitHub
           </a>
           <div class="proj-stars">C++ 100%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 5: Interactive Developer Portfolio -->
+    <div class="proj-card reveal" data-lang="HTML" data-name="interactive developer portfolio html css js canvas custom cursor">
+      <div class="proj-banner" style="background:linear-gradient(135deg,#0d1320,#1e293b)">
+        ✨
+      </div>
+      <div class="proj-body">
+        <div class="proj-name">Interactive Developer Portfolio</div>
+        <div class="proj-desc">Your premium personal developer showcase site featuring fluid micro-interactions, canvas-driven background particles, dual dark/light design states, custom dynamic cursor ring, and real-time JavaScript-driven data filtering.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">HTML5</span>
+          <span class="proj-tag">CSS3 Variables</span>
+          <span class="proj-tag">JavaScript ES6+</span>
+          <span class="proj-tag">Canvas API</span>
+          <span class="proj-tag">Intersections API</span>
+        </div>
+        <ul style="font-size:.82rem;color:var(--muted);padding-left:1.2rem;margin:.5rem 0;line-height:2">
+          <li>Custom lag-free cursor tracking with spring-physics ring</li>
+          <li>Performance-optimized Canvas particle system background</li>
+          <li>Smooth content revelation triggers on viewport intersection</li>
+          <li>Interactive sorting for C++, Python, and Web modules</li>
+        </ul>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://github.com/suhaibahmd2006-dev/Portfolio" target="_blank">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            GitHub
+          </a>
+          <div class="proj-stars">HTML 100%</div>
         </div>
       </div>
     </div>
@@ -1187,13 +1252,13 @@ footer{
       <div class="edu-detail">Currently entering 3rd Semester · E-8 Campus, Islamabad</div>
     </div>
     <div class="edu-card reveal">
-      <div class="edu-icon">📗</div>
+      <div class="edu-icon">📘</div>
       <div class="edu-degree">Intermediate — Pre-Engineering</div>
       <div class="edu-inst">Islamia College Sukkur</div>
       <div class="edu-detail">Pre-Engineering stream · Sukkur, Sindh</div>
     </div>
     <div class="edu-card reveal">
-      <div class="edu-icon">📘</div>
+      <div class="edu-icon">📗</div>
       <div class="edu-degree">Matriculation</div>
       <div class="edu-inst">Hira Grammar Public High School Rohri</div>
       <div class="edu-detail">Rohri, Sindh, Pakistan</div>
@@ -1228,7 +1293,7 @@ footer{
   <div class="analytics-grid">
     <div class="analytics-card reveal">
       <div class="analytics-icon">📦</div>
-      <div class="analytics-val">7</div>
+      <div class="analytics-val">8</div>
       <div class="analytics-label">Public Repositories</div>
     </div>
     <div class="analytics-card reveal">
@@ -1248,7 +1313,7 @@ footer{
     </div>
     <div class="analytics-card reveal">
       <div class="analytics-icon">📝</div>
-      <div class="analytics-val">41+</div>
+      <div class="analytics-val">50+</div>
       <div class="analytics-label">Total Commits</div>
     </div>
     <div class="analytics-card reveal">
@@ -1261,16 +1326,21 @@ footer{
   <div class="lang-bars reveal" style="max-width:600px;margin-top:3rem">
     <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:1.5rem">Top Languages Used</h3>
     <div class="lang-bar-item">
-      <div class="lang-bar-top"><span>HTML</span><span style="color:var(--cyan);font-family:var(--font-mono)">~52%</span></div>
-      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:52%;background:linear-gradient(90deg,#e34c26,#f06529)"></div></div>
+      <div class="lang-bar-top"><span>HTML</span><span style="color:var(--cyan);font-family:var(--font-mono)">~46%</span></div>
+      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:46%;background:linear-gradient(90deg,#e34c26,#f06529)"></div></div>
     </div>
     <div class="lang-bar-item">
-      <div class="lang-bar-top"><span>CSS</span><span style="color:var(--cyan);font-family:var(--font-mono)">~35%</span></div>
-      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:35%;background:linear-gradient(90deg,#264de4,#2965f1)"></div></div>
+      <div class="lang-bar-top"><span>CSS</span><span style="color:var(--cyan);font-family:var(--font-mono)">~32%</span></div>
+      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:32%;background:linear-gradient(90deg,#264de4,#2965f1)"></div></div>
     </div>
     <div class="lang-bar-item">
       <div class="lang-bar-top"><span>JavaScript</span><span style="color:var(--cyan);font-family:var(--font-mono)">~12%</span></div>
       <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:12%;background:linear-gradient(90deg,#f7df1e,#e8c91a)"></div></div>
+    </div>
+    <div class="lang-bar-item">
+      <!-- Included Python visually into language statistics -->
+      <div class="lang-bar-top"><span>Python</span><span style="color:var(--cyan);font-family:var(--font-mono)">~9%</span></div>
+      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:9%;background:linear-gradient(90deg,#3572A5,#306998)"></div></div>
     </div>
     <div class="lang-bar-item">
       <div class="lang-bar-top"><span>C++</span><span style="color:var(--cyan);font-family:var(--font-mono)">~1%</span></div>
@@ -1280,7 +1350,7 @@ footer{
 
   <!-- GitHub Stats Card embed -->
   <div style="margin-top:3rem;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center" class="reveal">
-    <img src="https://github-readme-stats.vercel.app/api?username=suhaibahmd2006-dev&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1320&title_color=22d3ee&text_color=94a3b8&icon_color=3b82f6" alt="GitHub Stats" style="border-radius:12px;max-width:400px" loading="lazy"/>
+    <img src="https://github-readme-stats.vercel.app/api?username=suiahabmd2006-dev&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1320&title_color=22d3ee&text_color=94a3b8&icon_color=3b82f6" alt="GitHub Stats" style="border-radius:12px;max-width:400px" loading="lazy"/>
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=suhaibahmd2006-dev&theme=tokyonight&hide_border=true&background=0d1320&stroke=22d3ee&ring=3b82f6&fire=a855f7" alt="GitHub Streak" style="border-radius:12px;max-width:400px" loading="lazy"/>
   </div>
 </section>
@@ -1391,6 +1461,7 @@ footer{
       <div class="footer-links">
         <a href="https://github.com/suhaibahmd2006-dev/sebi-ecommerce-project" target="_blank">E-Commerce Storefront</a>
         <a href="https://github.com/suhaibahmd2006-dev/ICT-PROJECT" target="_blank">Paws Heaven</a>
+        <a href="https://github.com/suhaibahmd2006-dev/Guess-The-Number-Game" target="_blank">Guess The Number Game</a>
         <a href="https://github.com/suhaibahmd2006-dev/Billing-System" target="_blank">Billing System (C++)</a>
         <a href="https://github.com/suhaibahmd2006-dev" target="_blank">All Repositories →</a>
       </div>
