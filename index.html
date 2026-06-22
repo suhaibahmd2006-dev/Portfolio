@@ -841,7 +841,7 @@ footer{
         Hey! I'm <strong style="color:var(--text)">Suhaib Ahmed</strong>  a Front End Developer and aspiring IT professional from Sukkur, Sindh, currently studying <strong style="color:var(--cyan)">BS Information Technology</strong> at Bahria University Islamabad.
       </p>
       <p style="color:var(--muted);line-height:1.9;margin-bottom:1.25rem;">
-        I completed a <strong style="color:var(--text)">Front End Web Development</strong> professional certification at Sukkur IBA University through the PITP program, where I built real world projects using HTML, CSS, and Vanilla JavaScript. Alongside web development, I'm expanding into backend logic with <strong style="color:var(--cyan)">Python</strong> and <strong style="color:var(--cyan)">C++</strong> through my university coursework.
+        I completed a <strong style="color:var(--text)">Front End Web Development</strong> professional certification at Sukkur IBA University through the PITP program, where I built real world projects using HTML, CSS, and Vanilla JavaScript. Alongside web development, I'm expanding into backend development with <strong style="color:var(--cyan)">FastAPI & SQLAlchemy</strong>, systems programming with <strong style="color:var(--cyan)">C++</strong>, and scripting with <strong style="color:var(--cyan)">Python</strong> through my university coursework and personal projects.
       </p>
       <p style="color:var(--muted);line-height:1.9;">
         I believe in writing clean, maintainable code and building things that are both functional and beautiful. Always learning. Always shipping.
@@ -856,8 +856,8 @@ footer{
 
       <div class="about-stats">
         <div class="stat-card">
-          <!-- Updated count to include all 6 of your active projects -->
-          <div class="stat-val">7</div>
+          <!-- Updated count to include all 8 active projects -->
+          <div class="stat-val">8</div>
           <div class="stat-label">Real GitHub Projects</div>
         </div>
         <div class="stat-card">
@@ -939,8 +939,16 @@ footer{
           <div class="skill-bar"><div class="skill-fill" style="--w:0.68;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
         </div>
         <div class="skill-item">
-          <div class="skill-top"><span>Python</span><span class="skill-pct">72%</span></div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:0.72;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
+          <div class="skill-top"><span>Python</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.75;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top"><span>FastAPI</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.65;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-top"><span>SQLAlchemy / ORM</span><span class="skill-pct">62%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w:0.62;background:linear-gradient(90deg,var(--purple),var(--magenta))"></div></div>
         </div>
         <div class="skill-item">
           <div class="skill-top"><span>File Handling / Data Processing</span><span class="skill-pct">65%</span></div>
@@ -1015,6 +1023,7 @@ footer{
     <button class="filter-btn active" data-lang="all" onclick="filterByLang(this,'all')">All</button>
     <button class="filter-btn" data-lang="HTML" onclick="filterByLang(this,'HTML')">HTML/CSS/JS</button>
     <button class="filter-btn" data-lang="Python" onclick="filterByLang(this,'Python')">Python</button>
+    <button class="filter-btn" data-lang="FastAPI" onclick="filterByLang(this,'FastAPI')">FastAPI / Backend</button>
     <button class="filter-btn" data-lang="C++" onclick="filterByLang(this,'C++')">C++</button>
   </div>
 
@@ -1248,6 +1257,40 @@ footer{
     </div>
   </div>
 </div>
+
+    <!-- PROJECT 8: User Management API -->
+    <div class="proj-card reveal" data-lang="FastAPI" data-name="user management api fastapi sqlalchemy rest backend">
+      <div class="proj-banner" style="background:linear-gradient(135deg,#0d4f3c,#05301f)">
+        🔗
+        <span class="featured-badge">🆕 New</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-name">User Management REST API</div>
+        <div class="proj-desc">A production-style RESTful API built with FastAPI and SQLAlchemy. Features full CRUD operations on a SQLite database with Pydantic schema validation, auto-generated Swagger docs, and clean ORM-based data modelling — a real backend project showcasing Python server-side skills.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python 3</span>
+          <span class="proj-tag">FastAPI</span>
+          <span class="proj-tag">SQLAlchemy</span>
+          <span class="proj-tag">SQLite</span>
+          <span class="proj-tag">Pydantic</span>
+          <span class="proj-tag">REST API</span>
+        </div>
+        <ul style="font-size:.82rem;color:var(--muted);padding-left:1.2rem;margin:.5rem 0;line-height:2">
+          <li>Full CRUD — Create, Read, Update, Delete user records</li>
+          <li>SQLAlchemy ORM with SQLite persistent storage</li>
+          <li>Pydantic models for strict request/response validation</li>
+          <li>Auto-generated Swagger UI & ReDoc documentation</li>
+          <li>Clean dependency injection pattern for DB session handling</li>
+        </ul>
+        <div class="proj-footer">
+          <a class="proj-link" href="https://github.com/suhaibahmd2006-dev/user-management-api" target="_blank">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            GitHub
+          </a>
+          <div class="proj-stars">Python · FastAPI</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1386,27 +1429,25 @@ footer{
   <div class="lang-bars reveal" style="max-width:600px;margin-top:3rem">
     <h3 style="font-family:var(--font-head);font-size:1.1rem;margin-bottom:1.5rem">Top Languages Used</h3>
     <div class="lang-bar-item">
-      <div class="lang-bar-top"><span>HTML</span><span style="color:var(--cyan);font-family:var(--font-mono)">~33%</span></div>
-      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:33%;background:linear-gradient(90deg,#e34c26,#f06529)"></div></div>
+      <div class="lang-bar-top"><span>HTML</span><span style="color:var(--cyan);font-family:var(--font-mono)">~30%</span></div>
+      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:30%;background:linear-gradient(90deg,#e34c26,#f06529)"></div></div>
     </div>
     <div class="lang-bar-item">
-      <div class="lang-bar-top"><span>CSS</span><span style="color:var(--cyan);font-family:var(--font-mono)">~29%</span></div>
-      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:29%;background:linear-gradient(90deg,#264de4,#2965f1)"></div></div>
+      <div class="lang-bar-top"><span>CSS</span><span style="color:var(--cyan);font-family:var(--font-mono)">~26%</span></div>
+      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:26%;background:linear-gradient(90deg,#264de4,#2965f1)"></div></div>
     </div>
     <div class="lang-bar-item">
-      <div class="lang-bar-top"><span>C++</span><span style="color:var(--cyan);font-family:var(--font-mono)">~19%</span></div>
-      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:19%;background:linear-gradient(90deg,#00599c,#004482)"></div></div>
+      <div class="lang-bar-top"><span>C++</span><span style="color:var(--cyan);font-family:var(--font-mono)">~17%</span></div>
+      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:17%;background:linear-gradient(90deg,#00599c,#004482)"></div></div>
+    </div>
+    <div class="lang-bar-item">
+      <div class="lang-bar-top"><span>Python</span><span style="color:var(--cyan);font-family:var(--font-mono)">~15%</span></div>
+      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:15%;background:linear-gradient(90deg,#3572A5,#306998)"></div></div>
     </div>
     <div class="lang-bar-item">
       <div class="lang-bar-top"><span>JavaScript</span><span style="color:var(--cyan);font-family:var(--font-mono)">~12%</span></div>
       <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:12%;background:linear-gradient(90deg,#f7df1e,#e8c91a)"></div></div>
     </div>
-    <div class="lang-bar-item">
-      <!-- Included Python visually into language statistics -->
-      <div class="lang-bar-top"><span>Python</span><span style="color:var(--cyan);font-family:var(--font-mono)">~7%</span></div>
-      <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:7%;background:linear-gradient(90deg,#3572A5,#306998)"></div></div>
-    </div>
-    
   </div>
 
   <!-- GitHub Stats Card embed -->
@@ -1492,7 +1533,7 @@ footer{
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="nav-logo">SA.</div>
-      <p class="footer-desc">Front-End Developer & BS IT Student at Bahria University Islamabad. Building with HTML, CSS, JavaScript, C++ and Python.</p>
+      <p class="footer-desc">Front-End Developer & BS IT Student at Bahria University Islamabad. Building with HTML, CSS, JavaScript, C++, Python, FastAPI & SQLAlchemy.</p>
       <div class="footer-socials" style="margin-top:1.25rem">
         <a class="social-link" href="https://github.com/suhaibahmd2006-dev" target="_blank">
           <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
@@ -1525,6 +1566,7 @@ footer{
         <a href="https://github.com/suhaibahmd2006-dev/Guess-The-Number-Game" target="_blank">Guess The Number Game</a>
         <a href="https://github.com/suhaibahmd2006-dev/Billing-System" target="_blank">Billing System (C++)</a>
         <a href="https://github.com/suhaibahmd2006-dev/Hospital-Management-System" target="_blank">Hospital Management System</a>
+        <a href="https://github.com/suhaibahmd2006-dev/user-management-api" target="_blank">User Management API</a>
         <a href="https://github.com/suhaibahmd2006-dev" target="_blank">All Repositories →</a>
       </div>
     </div>
