@@ -1,0 +1,2619 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Suhaib Ahmed</title>
+<meta name="description" content="Portfolio of Suhaib Ahmed, Creative Developer &amp; Systems Engineer. Interactive WebGL experiences, resilient frontend architectures, and high-performance applications."/>
+<meta property="og:title" content="Suhaib Ahmed Creative Developer &amp; Systems Engineer"/>
+<meta property="og:description" content="Creative Developer &amp; Systems Engineer · WebGL, JavaScript ES6+, Python, C++, and Defensive Architecture."/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#050505"/>
+
+<!-- Tab Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="alternate icon" type="image/svg+xml" href="favicon.svg"/>
+<link rel="apple-touch-icon" href="favicon.svg"/>
+
+<!-- Typography: Plus Jakarta Sans & JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+
+<!-- Three.js for Real-Time 3D Cyber-Matrix & Wireframe Horizon -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<style>
+/* ============================================================
+   CREATIVE DEVELOPER ARCHITECTURE // TOKENS & SYSTEM
+   Atmosphere: Organic Coal, Developer Matrix, Accent Blue, Amber
+   ============================================================ */
+:root {
+  --color-background: #050505;
+  --color-background-elev: #0a0b0a;
+  --color-background-well: #0e110f;
+  --color-card: rgba(12, 14, 13, 0.85);
+  --color-card-hover: rgba(18, 21, 19, 0.95);
+  --color-text: #f0f0f0;
+  --color-text-muted: rgba(240, 240, 240, 0.62);
+  --color-text-dim: rgba(240, 240, 240, 0.35);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.24);
+  --color-margiela-blue: #4B80F2;
+  --color-margiela-blue-dim: rgba(75, 128, 242, 0.14);
+  --color-warm-amber: #D8AF65;
+  --color-botanical-olive: #6E8564;
+  --color-matrix-cyan: #35D9FF;
+  --color-security-shield: #22c55e;
+  
+  --font-text: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --fontw-text: 400;
+  --fontw-subtitle: 500;
+  --fontw-title: 700;
+  --fontw-cta: 600;
+  
+  --padding-sides: max(32px, 4.5vw);
+  --padding-sides-content: calc(2vw + 80px);
+  --header-height: 86px;
+  --default-border-radius: 20px;
+  --button-radius: 30px;
+  --trans-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Conic Border Sheen Variables */
+  --angle: 80deg;
+  --button-bg-top: rgba(255, 255, 255, 0.04);
+  --button-bg-bottom: rgba(100, 100, 100, 0.32);
+  --button-label-top: #ffffff;
+  --button-label-bottom: rgba(255, 255, 255, 0.55);
+}
+
+[data-theme="light"] {
+  --color-background: #F4F6F4;
+  --color-background-elev: #FFFFFF;
+  --color-background-well: #E9ECE8;
+  --color-card: rgba(255, 255, 255, 0.9);
+  --color-card-hover: #FFFFFF;
+  --color-text: #111210;
+  --color-text-muted: rgba(17, 18, 16, 0.68);
+  --color-text-dim: rgba(17, 18, 16, 0.4);
+  --color-border: rgba(0, 0, 0, 0.09);
+  --color-border-hover: rgba(0, 0, 0, 0.28);
+  --button-bg-top: rgba(0, 0, 0, 0.03);
+  --button-bg-bottom: rgba(0, 0, 0, 0.12);
+  --button-label-top: #111210;
+  --button-label-bottom: rgba(17, 18, 16, 0.6);
+}
+
+/* ── RESET & BASE ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.45;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Atmospheric Developer Coordinate Grid & Film Grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 30%, transparent 100%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 900;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ── 3D UNIFIED WEBGL CANVAS (INTENSIVE DEVELOPER MATRIX) ──── */
+#unified-canvas-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease-out;
+}
+#unified-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── CUSTOM HARDWARE CURSOR ────────────────────────────────── */
+#custom-cursor {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  #custom-cursor {
+    display: block;
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s var(--trans-smooth), height 0.3s var(--trans-smooth), border-color 0.25s, background-color 0.25s;
+    mix-blend-mode: difference;
+  }
+  body.cursor-active #custom-cursor {
+    width: 52px;
+    height: 52px;
+    border-color: rgba(75, 128, 242, 0.8);
+    background-color: rgba(75, 128, 242, 0.1);
+  }
+}
+
+/* ── CAPSULE ACTION BUTTONS ────────────────────────────────── */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: -45deg;
+  inherits: false;
+}
+.Button {
+  --border-shine: conic-gradient(
+    from var(--angle),
+    rgba(255, 255, 255, 0.32) 0deg,
+    transparent 18deg,
+    transparent 150deg,
+    rgba(255, 255, 255, 0.32) 180deg,
+    transparent 197deg,
+    transparent 332deg,
+    rgba(255, 255, 255, 0.32) 360deg
+  );
+  position: relative;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--button-radius);
+  border: 0;
+  background: linear-gradient(90deg, var(--button-bg-top), var(--button-bg-bottom)), rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: var(--font-text);
+  font-weight: var(--fontw-cta);
+  font-size: 0.86rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: transform 0.25s var(--trans-smooth), background 0.3s ease, border-color 0.3s;
+  white-space: nowrap;
+}
+.Button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--border-shine);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.Button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(120, 120, 120, 0.45));
+}
+.Button--primary {
+  background: linear-gradient(90deg, rgba(75, 128, 242, 0.28), rgba(75, 128, 242, 0.12)), rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(75, 128, 242, 0.45);
+}
+.Button--primary:hover {
+  border-color: var(--color-margiela-blue);
+  box-shadow: 0 10px 24px rgba(75, 128, 242, 0.3);
+}
+
+.IconAnimatedArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.IconAnimatedArrow--animated {
+  animation: arrowBounce 1.6s ease-in-out infinite;
+}
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3.5px); }
+}
+
+/* ── TAGS & STATUS BADGES ──────────────────────────────────── */
+.TagIndustry {
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.32rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-margiela-blue);
+  color: var(--color-margiela-blue);
+  background: var(--color-margiela-blue-dim);
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.tag {
+  font-family: var(--font-text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.32rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  display: inline-flex;
+  align-items: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.tag:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text);
+}
+.tag-security {
+  border-color: rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.08);
+}
+.style-overline {
+  font-family: var(--font-text);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+/* ── HEADER NAVIGATION ──────────────────────────────────────── */
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  padding: 0 var(--padding-sides);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 800;
+  background: rgba(5, 5, 5, 0.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.3s ease, height 0.3s ease;
+}
+.Header.scrolled {
+  background: rgba(5, 5, 5, 0.9);
+  height: 72px;
+}
+.Header-brand {
+  display: flex;
+  flex-direction: column;
+}
+.Header-logo {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.Header-sub {
+  font-size: 0.68rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+.Header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.Header-nav a {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.25rem 0;
+}
+.Header-nav a:hover, .Header-nav a.active {
+  color: var(--color-text);
+}
+.Header-nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-text);
+}
+.Header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Developer Telemetry Pill */
+.DevTelemetryPill {
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.DevTelemetryPill:hover {
+  border-color: var(--color-margiela-blue);
+  color: var(--color-text);
+}
+.telemetry-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-margiela-blue);
+  box-shadow: 0 0 8px var(--color-margiela-blue);
+  animation: devPulse 2s infinite;
+}
+@keyframes devPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background-elev);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.hamburger:hover, .hamburger:focus-visible {
+  border-color: var(--color-border-hover);
+  background: var(--color-card-hover);
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--color-text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  z-index: 999;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 2.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+}
+.mobile-nav.open {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.mobile-nav-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-background-elev);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.mobile-nav-close:hover {
+  border-color: var(--color-border-hover);
+}
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin: auto 0;
+  padding: 1.5rem 0;
+}
+.mobile-nav-links a {
+  font-size: clamp(1.4rem, 6vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s, padding-left 0.2s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a:active {
+  color: var(--color-margiela-blue);
+  padding-left: 0.5rem;
+}
+.mobile-nav-links .nav-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mobile-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--color-text-dim);
+}
+
+/* ── HERO EXPERIENCE (.UseCase-hero) ────────────────────────── */
+.UseCase-hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--padding-sides);
+  padding-bottom: 5.5vw;
+  z-index: 2;
+}
+.UseCase-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 1200px;
+}
+.UseCase-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.UseCase-hero h1 {
+  font-size: clamp(3.2rem, 9vw, 8.4rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  margin-right: 20px;
+}
+.CTAScroll {
+  position: absolute;
+  right: var(--padding-sides);
+  bottom: 5.5vw;
+  z-index: 3;
+}
+
+/* ── EDITORIAL CONTENT BLOCKS (.ContentBlock) ───────────────── */
+.ContentBlock {
+  position: relative;
+  z-index: 2;
+  padding: 8vw var(--padding-sides);
+  border-top: 1px solid var(--color-border);
+}
+
+.BigStatement {
+  font-size: clamp(1.8rem, 3.8vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  max-width: 1100px;
+  color: var(--color-text);
+}
+.BigStatement .word-dim {
+  color: var(--color-text-dim);
+}
+
+/* Metadata Ribbon (.ProjectDetails) */
+.ProjectDetails {
+  padding: 2.8vw var(--padding-sides);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 2;
+  background: rgba(5, 5, 5, 0.45);
+  backdrop-filter: blur(12px);
+}
+.ProjectDetails ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  list-style: none;
+}
+.ProjectDetails li h3 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+  margin-bottom: 0.45rem;
+}
+.ProjectDetails li span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* ── FLAGSHIP DOSSIER: MEETFLOW AI (.VisualHighlight) ───────── */
+.VisualHighlight {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5vw;
+  align-items: start;
+}
+.VisualHighlight-visual {
+  position: relative;
+  border-radius: var(--default-border-radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-background-elev);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.VisualHighlight-visual:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-hover);
+}
+
+/* MeetFlow Interface Mockup */
+.mockup-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background: #080908;
+  border-bottom: 1px solid var(--color-border);
+}
+.mockup-controls { display: flex; gap: 6px; }
+.mockup-pip { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); }
+.mockup-url {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-margiela-blue);
+  background: #000;
+  padding: 0.25rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+.mockup-screen {
+  padding: 2.2rem;
+  background: linear-gradient(180deg, #0d100e 0%, #050706 100%);
+}
+.mockup-header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.mockup-app-brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.mockup-app-brand span { color: var(--color-margiela-blue); }
+.mockup-pill-status {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-warm-amber);
+  border: 1px solid rgba(216, 175, 101, 0.35);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(216, 175, 101, 0.08);
+}
+.mockup-wave-box {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.mockup-wave-bars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 42px;
+  margin-top: 0.85rem;
+}
+.mockup-wave-bar {
+  flex: 1;
+  background: linear-gradient(180deg, var(--color-margiela-blue), var(--color-botanical-olive));
+  border-radius: 2px;
+  animation: waveMotion 1.4s ease-in-out infinite alternate;
+}
+@keyframes waveMotion {
+  0% { height: 10px; }
+  100% { height: 40px; }
+}
+.mockup-grid-cells {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+.mockup-cell {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.85rem;
+}
+.mockup-cell-lbl {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+}
+.mockup-cell-val {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 0.25rem;
+}
+
+/* MeetFlow Deep Technical Spec Breakdown */
+.meetflow-spec-card {
+  margin-top: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+.meetflow-spec-card strong { color: var(--color-text); }
+.spec-tag-accent { color: var(--color-margiela-blue); }
+
+.VisualHighlight-content h2 {
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+.VisualHighlight-content p {
+  font-size: 1.02rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.tech-spec-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ── SELECTED REPOSITORIES GALLERY (.Cards) ─────────────────── */
+.Cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.Cards-header h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.Cards-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.filter-search-input {
+  background: var(--color-background-elev);
+  border: 1px solid var(--color-border);
+  border-radius: var(--button-radius);
+  padding: 0.65rem 1.4rem;
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: 0.86rem;
+  outline: none;
+  min-width: 260px;
+  transition: border-color 0.2s;
+}
+.filter-search-input:focus {
+  border-color: var(--color-border-hover);
+}
+.Cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+}
+.Card-item {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--default-border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s var(--trans-smooth), border-color 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+.Card-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-border-hover);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+.Card-mockup {
+  height: 190px;
+  background: #080908;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Card-mockup-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Card-mockup-body {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+.Card-content {
+  padding: 1.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.Card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+}
+.Card-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+.Card-bullet-list {
+  font-size: 0.82rem;
+  color: var(--color-text-dim);
+  padding-left: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+.Card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+.Card-footer a {
+  color: var(--color-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.Card-footer a:hover {
+  color: var(--color-margiela-blue);
+}
+
+/* ── STRATEGY & CAPABILITIES (.Texts) ───────────────────────── */
+.Texts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.2rem;
+  margin-top: 3.5rem;
+}
+.Texts-item {
+  border-left: 1px solid var(--color-border);
+  padding-left: 1.75rem;
+}
+.Texts-item h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.6rem;
+}
+.Texts-item p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+.Texts-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.Texts-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: var(--color-background-well);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+/* ── DEFENSIVE ARCHITECTURE & SECURITY CONTRACTS ────────────── */
+#security {
+  background: #060706;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.security-hero-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.security-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+.security-card {
+  background: var(--color-background-elev);
+  border: 1px solid var(--color-border);
+  border-radius: var(--default-border-radius);
+  padding: 2.2rem;
+  transition: transform 0.25s var(--trans-smooth), border-color 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.security-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+.security-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+.security-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.security-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.security-card-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.security-spec-bullets {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--color-text-dim);
+  padding-left: 1.2rem;
+  line-height: 1.85;
+  margin-top: auto;
+}
+.security-spec-bullets strong {
+  color: var(--color-text);
+}
+
+/* ── TRAJECTORY & CHRONOLOGY ────────────────────────────────── */
+.Trajectory-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+.Trajectory-row {
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.8rem 0;
+  display: grid;
+  grid-template-columns: 180px 1.5fr 1fr;
+  gap: 2rem;
+  align-items: baseline;
+  transition: background 0.2s ease;
+}
+.Trajectory-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+.Trajectory-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+.Trajectory-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.Trajectory-inst {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* ── SOLID OPAQUE FOOTER (.Footer) ──────────────────────────── */
+.Footer {
+  width: 100%;
+  padding: 8vw var(--padding-sides) 4rem;
+  position: relative;
+  z-index: 25; /* Elevated above 3D canvas */
+  background-color: #050505 !important; /* Strictly opaque solid obsidian */
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -40px 80px rgba(5, 5, 5, 1);
+}
+.Footer-statement {
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 900px;
+  margin-bottom: 3.5rem;
+}
+.Footer-contact-form {
+  max-width: 680px;
+  background: #0a0b0a !important; /* Solid opaque elevated surface */
+  border: 1px solid var(--color-border-hover);
+  border-radius: var(--default-border-radius);
+  padding: 2.5rem;
+  margin-bottom: 5rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+.Footer-contact-form h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+.form-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+}
+.form-input-group label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+  font-family: var(--font-mono);
+}
+.form-input-group input,
+.form-input-group textarea {
+  background: #050505;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.85rem 1.15rem;
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+.form-input-group input:focus,
+.form-input-group textarea:focus {
+  border-color: var(--color-text);
+}
+.form-msg {
+  padding: 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+  display: none;
+}
+.form-msg.success {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  display: block;
+}
+.form-msg.error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  display: block;
+}
+
+.Footer-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+.Footer-col-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text-dim);
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+}
+.Footer-col a {
+  display: block;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+}
+.Footer-col a:hover {
+  color: var(--color-text);
+}
+.Footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  font-size: 0.78rem;
+  color: var(--color-text-dim);
+}
+
+/* ── RESPONSIVE ADAPTATIONS FOR ALL VIEWPORTS & DEVICES ──────── */
+@media (max-width: 1200px) {
+  .VisualHighlight {
+    gap: 3.5vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .VisualHighlight {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .ProjectDetails ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .Trajectory-row {
+    grid-template-columns: 140px 1.4fr 1fr;
+    gap: 1.25rem;
+  }
+  .Footer-meta-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .security-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+    --padding-sides: 1.25rem;
+  }
+  .Header-nav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .DevTelemetryPill {
+    display: none;
+  }
+  .CTAScroll {
+    display: none;
+  }
+  .UseCase-hero {
+    min-height: 100svh;
+    min-height: 100vh;
+    padding: 1.25rem;
+    padding-top: calc(var(--header-height) + 1.25rem);
+    padding-bottom: 2.25rem;
+  }
+  .UseCase-hero h1 {
+    font-size: clamp(2.8rem, 11vw, 5.5rem);
+    margin-right: 0;
+  }
+  .ContentBlock {
+    padding: 4.5rem var(--padding-sides);
+  }
+  .BigStatement {
+    font-size: clamp(1.5rem, 5.5vw, 2.4rem);
+    line-height: 1.3;
+  }
+  .ProjectDetails {
+    padding: 1.75rem var(--padding-sides);
+  }
+  .ProjectDetails ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .Cards-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+  .Cards-header h2 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+  }
+  .filter-search-input {
+    min-width: 0;
+    width: 100%;
+  }
+  .Cards-filter-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.6rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .Cards-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .Cards-filter-bar .Button {
+    flex-shrink: 0;
+  }
+  .Cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .mockup-screen {
+    padding: 1.4rem 1.15rem;
+  }
+  .mockup-grid-cells {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  .mockup-url {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .meetflow-spec-card {
+    padding: 1.25rem 1.1rem;
+    font-size: 0.75rem;
+    line-height: 1.65;
+  }
+  .security-matrix-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .security-card {
+    padding: 1.6rem 1.25rem;
+  }
+  .Texts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+  .Texts-item {
+    padding-left: 1.25rem;
+  }
+  .Trajectory-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    padding: 1.25rem 0;
+  }
+  .Footer {
+    padding: 4rem var(--padding-sides) 2.5rem;
+  }
+  .Footer-statement {
+    font-size: clamp(1.8rem, 6.5vw, 3.2rem);
+    margin-bottom: 2rem;
+  }
+  .Footer-contact-form {
+    padding: 1.6rem 1.25rem;
+    margin-bottom: 3.5rem;
+  }
+  .Footer-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .Footer-bottom-bar {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 66px;
+    --padding-sides: 1rem;
+  }
+  .Header {
+    padding: 0 var(--padding-sides);
+  }
+  .Header-sub {
+    display: none;
+  }
+  .Header-logo {
+    font-size: 0.95rem;
+  }
+  .Header .Button--primary {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
+    gap: 0.4rem;
+  }
+  .UseCase-tags {
+    gap: 0.4rem;
+  }
+  .TagIndustry, .tag {
+    font-size: 0.7rem;
+    padding: 0.22rem 0.55rem;
+  }
+  .ProjectDetails ul {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .mockup-bar {
+    padding: 0.65rem 0.85rem;
+  }
+  .mockup-url {
+    max-width: 140px;
+    font-size: 0.66rem;
+  }
+  .mockup-bar > span:last-child {
+    display: none;
+  }
+  .mockup-screen {
+    padding: 1rem 0.85rem;
+  }
+  .mockup-header-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .mockup-wave-bars {
+    height: 32px;
+  }
+  .Card-mockup {
+    height: 150px;
+    padding: 1rem;
+  }
+  .Card-content {
+    padding: 1.25rem 1rem;
+  }
+  .Footer-contact-form {
+    padding: 1.25rem 1rem;
+  }
+  .form-input-group input,
+  .form-input-group textarea {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.88rem;
+  }
+  .Button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #custom-cursor {
+    display: none !important;
+  }
+  body {
+    cursor: auto !important;
+  }
+  a, button, input, textarea, select {
+    cursor: pointer !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- UNIFIED 3D CANVAS (INTENSIVE DEVELOPER CYBER-MATRIX) -->
+<div id="unified-canvas-container" aria-hidden="true">
+  <canvas id="unified-canvas"></canvas>
+</div>
+
+<!-- HARDWARE CUSTOM CURSOR -->
+<div id="custom-cursor" aria-hidden="true"></div>
+
+<!-- HEADER NAVIGATION (.Header) -->
+<header class="Header" id="header">
+  <div class="Header-brand">
+    <a href="#" class="Header-logo" style="display:flex; align-items:center; gap:0.65rem;">
+      <span>SUHAIB AHMED</span>
+    </a>
+    <span class="Header-sub">Creative Dev &amp; Systems</span>
+  </div>
+
+  <nav class="Header-nav">
+    <a href="#flagship">MeetFlow AI</a>
+    <a href="#statement">Manifesto</a>
+    <a href="#works">Works</a>
+    <a href="#security">Security</a>
+    <a href="#strategy">Architecture</a>
+    <a href="#trajectory">Trajectory</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="Header-actions">
+    <div class="DevTelemetryPill" title="Real-Time 3D WebGL Matrix Online">
+      <span class="telemetry-pulse"></span>
+      <span>SYS // WEBGL ACTIVE</span>
+    </div>
+
+    <a href="#contact" class="Button Button--primary">
+      <span>Let's talk</span>
+      <span class="IconAnimatedArrow IconAnimatedArrow--animated" aria-hidden="true">
+        <svg width="12" height="13" fill="none" viewBox="0 0 12 13">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m10.7 6.117-5 5-5-5M5.7.7v10"/>
+        </svg>
+      </span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+  <div class="mobile-nav-header">
+    <div class="Header-logo" style="font-size:1.05rem; font-weight:800; letter-spacing:-0.02em;">
+      SUHAIB AHMED
+    </div>
+    <button class="mobile-nav-close" id="mobile-nav-close" onclick="closeMob()" aria-label="Close Navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="mobile-nav-links">
+    <a href="#flagship" onclick="closeMob()">
+      <span>MeetFlow AI</span>
+      <span class="nav-sub">Flagship AI</span>
+    </a>
+    <a href="#statement" onclick="closeMob()">
+      <span>Manifesto</span>
+      <span class="nav-sub">01 // Ethics</span>
+    </a>
+    <a href="#works" onclick="closeMob()">
+      <span>Works</span>
+      <span class="nav-sub">02 // Code</span>
+    </a>
+    <a href="#security" onclick="closeMob()">
+      <span>Security</span>
+      <span class="nav-sub">03 // Defense</span>
+    </a>
+    <a href="#strategy" onclick="closeMob()">
+      <span>Architecture</span>
+      <span class="nav-sub">04 // Systems</span>
+    </a>
+    <a href="#trajectory" onclick="closeMob()">
+      <span>Trajectory</span>
+      <span class="nav-sub">05 // Background</span>
+    </a>
+    <a href="#contact" onclick="closeMob()">
+      <span>Contact</span>
+      <span class="nav-sub">Direct Channel</span>
+    </a>
+  </div>
+
+  <div class="mobile-nav-footer">
+    <div style="display:flex;align-items:center;gap:0.5rem;">
+      <span class="telemetry-pulse"></span>
+      <span>SYS // WEBGL ACTIVE</span>
+    </div>
+    <span>ISLAMABAD, PK</span>
+  </div>
+</div>
+
+<!-- MAIN WORK AREA -->
+<main>
+
+  <!-- OPENING HERO EXPERIENCE (.UseCase-hero) -->
+  <section class="UseCase-hero" id="hero">
+    <div class="UseCase-name">
+      <div class="UseCase-tags">
+        <span class="TagIndustry">Creative Developer</span>
+        <span class="tag">Systems &amp; Interfaces</span>
+        <span class="tag">BS IT @ Bahria University</span>
+        <span class="tag tag-security">Security Hardened</span>
+      </div>
+
+      <h1>Suhaib Ahmed</h1>
+    </div>
+
+    <div class="CTAScroll">
+      <a href="#flagship" class="Button">
+        <span>Scroll to see more</span>
+        <span class="IconAnimatedArrow IconAnimatedArrow--animated" aria-hidden="true">
+          <svg width="12" height="13" fill="none" viewBox="0 0 12 13">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m10.7 6.117-5 5-5-5M5.7.7v10"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- EDITORIAL MANIFESTO (.TitleHighlight / .BigStatement) -->
+  <section class="ContentBlock" id="statement">
+    <span class="style-overline">THE DISCIPLINE // MANIFESTO</span>
+    <h2 class="BigStatement">
+      From computational logic to sensory digital craft, <span class="word-dim">engineering real-time interfaces, AI products, and resilient architectures where every interaction is an intentional world.</span>
+    </h2>
+  </section>
+
+  <!-- METADATA RIBBON (.ProjectDetails) -->
+  <section class="ProjectDetails">
+    <ul>
+      <li>
+        <h3>Identity</h3>
+        <span>Creative Developer</span>
+      </li>
+      <li>
+        <h3>Core Stack</h3>
+        <span>JavaScript ES6+, C++, Python, FastAPI</span>
+      </li>
+      <li>
+        <h3>Security Contract</h3>
+        <span>CSRF, CSP, Rate Limits, Turnstile</span>
+      </li>
+      <li>
+        <h3>Coordinates</h3>
+        <span>Islamabad, Pakistan</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- FLAGSHIP DOSSIER: MEETFLOW AI (.VisualHighlight) -->
+  <section class="ContentBlock" id="flagship">
+    <div class="VisualHighlight">
+      <!-- High-Fidelity Interactive Mockup -->
+      <div class="VisualHighlight-visual">
+        <div class="mockup-bar">
+          <div class="mockup-controls">
+            <span class="mockup-pip"></span>
+            <span class="mockup-pip"></span>
+            <span class="mockup-pip"></span>
+          </div>
+          <div class="mockup-url">https://meetflowai-mu.vercel.app/</div>
+          <span style="font-family:var(--font-mono);font-size:0.65rem;color:var(--color-margiela-blue)">● PRODUCTION LIVE</span>
+        </div>
+
+        <div class="mockup-screen">
+          <div class="mockup-header-title">
+            <div class="mockup-app-brand">MeetFlow<span>AI</span></div>
+            <span class="mockup-pill-status">● Live Production Gateway</span>
+          </div>
+
+          <div class="mockup-wave-box">
+            <div style="font-size:0.75rem;font-family:var(--font-mono);color:var(--color-text-dim)">AUDIO INTAKE // 48kHz WAV / MP3 / M4A / WEBM</div>
+            <div class="mockup-wave-bars">
+              <span class="mockup-wave-bar" style="height:14px;animation-delay:0.1s"></span>
+              <span class="mockup-wave-bar" style="height:32px;animation-delay:0.25s"></span>
+              <span class="mockup-wave-bar" style="height:42px;animation-delay:0.15s"></span>
+              <span class="mockup-wave-bar" style="height:20px;animation-delay:0.35s"></span>
+              <span class="mockup-wave-bar" style="height:38px;animation-delay:0.05s"></span>
+              <span class="mockup-wave-bar" style="height:24px;animation-delay:0.3s"></span>
+              <span class="mockup-wave-bar" style="height:40px;animation-delay:0.2s"></span>
+              <span class="mockup-wave-bar" style="height:18px;animation-delay:0.4s"></span>
+            </div>
+          </div>
+
+          <div class="mockup-grid-cells">
+            <div class="mockup-cell">
+              <div class="mockup-cell-lbl">Groq Llama 3.3</div>
+              <div class="mockup-cell-val">Executive Briefing</div>
+            </div>
+            <div class="mockup-cell">
+              <div class="mockup-cell-lbl">Action Extraction</div>
+              <div class="mockup-cell-val">Structured Deliverables</div>
+            </div>
+            <div class="mockup-cell">
+              <div class="mockup-cell-lbl">Fish Audio TTS</div>
+              <div class="mockup-cell-val">Audio Briefing Note</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architecture Highlights Card -->
+        <div class="meetflow-spec-card">
+          <div style="font-weight:700; color:var(--color-text); margin-bottom:0.6rem; letter-spacing:0.04em">
+            [ARCHITECTURE &amp; ENGINEERING HIGHLIGHTS]
+          </div>
+          <div>• <strong>Backend Service:</strong> Asynchronous FastAPI service running on Uvicorn with SQLAlchemy ORM and relational PostgreSQL persistence.</div>
+          <div>• <strong>AI Orchestration:</strong> Multi-engine pipeline featuring Groq API (Llama 3.3) for sub-second transcript analysis, multimodal video summarization, and neural voice synthesis.</div>
+          <div>• <strong>Client Architecture:</strong> Vanilla JavaScript client architecture with declarative event routing, compiled Tailwind CSS, offline PWA capabilities, and cross-platform web application deployment.</div>
+          <div>• <strong>Platform Services:</strong> Integrated localized checkout via Paddle.js with Subresource Integrity (SRI), transactional email delivery, and automated Cloudflare Turnstile bot verification.</div>
+        </div>
+      </div>
+
+      <!-- Editorial Narrative -->
+      <div class="VisualHighlight-content">
+        <span class="style-overline">FLAGSHIP SHOWCASE // REAL-WORLD AI SYSTEM</span>
+        <h2>How do you make conversations tangible?</h2>
+        <p>
+          Conversations and team discussions generate critical decisions that are easily lost without dedicated documentation. MeetFlow AI solves this by converting recorded discussions into executive briefings, prioritized action items, and ready-to-share follow-up communications.
+        </p>
+        <p>
+          As <strong>Lead Frontend &amp; Product Engineer</strong>, I engineered the client architecture using Vanilla JavaScript and Tailwind CSS. Built the real-time audio intake zone with client-side format and boundary inspection, implemented persistent session state management, and integrated external enterprise SDKs.
+        </p>
+
+        <div class="tech-spec-pills">
+          <span class="tag">Vanilla JS ES6+</span>
+          <span class="tag">FastAPI (Python)</span>
+          <span class="tag">SQLAlchemy ORM</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Groq AI (Llama 3.3)</span>
+          <span class="tag">Multimodal Video AI</span>
+          <span class="tag">Neural Voice TTS</span>
+          <span class="tag">Paddle.js Payments</span>
+          <span class="tag tag-security">Cloudflare Turnstile</span>
+          <span class="tag tag-security">Defensive Architecture</span>
+        </div>
+
+        <a href="https://meetflowai-mu.vercel.app/" target="_blank" rel="noopener noreferrer" class="Button Button--primary">
+          <span>See MeetFlow AI live</span>
+          <span class="IconAnimatedArrow IconAnimatedArrow--animated" aria-hidden="true">
+            <svg width="12" height="13" fill="none" viewBox="0 0 12 13">
+              <path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M1 11.5 11 1.5M11 1.5H3.5M11 1.5v7.5"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED REPOSITORIES GALLERY (.Cards) -->
+  <section class="ContentBlock" id="works">
+    <div class="Cards-header">
+      <div>
+        <span class="style-overline">VERIFIED REPOSITORIES // GITHUB WORK</span>
+        <h2>Curated Works</h2>
+      </div>
+
+      <input type="text" id="projSearch" class="filter-search-input" placeholder="Search by name, technology, or domain..." oninput="filterProjects()"/>
+    </div>
+
+    <!-- Capsule Filters -->
+    <div class="Cards-filter-bar">
+      <button class="Button Button--primary" data-filter="all" onclick="filterByLang(this, 'all')"><span>All Works</span></button>
+      <button class="Button" data-filter="HTML" onclick="filterByLang(this, 'HTML')"><span>Web &amp; Frontend</span></button>
+      <button class="Button" data-filter="Python" onclick="filterByLang(this, 'Python')"><span>Python Automation</span></button>
+      <button class="Button" data-filter="FastAPI" onclick="filterByLang(this, 'FastAPI')"><span>FastAPI / Backend</span></button>
+      <button class="Button" data-filter="C++" onclick="filterByLang(this, 'C++')"><span>C++ Systems</span></button>
+    </div>
+
+    <div class="Cards-grid" id="projectsGrid">
+
+      <!-- PROJECT 1: Sebi E-Commerce -->
+      <article class="Card-item" data-lang="HTML" data-name="sebi ecommerce storefront vanilla js localstorage html css">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>E-Commerce // Client Architecture</span>
+            <span style="color:var(--color-margiela-blue)">⭐ 1 Star</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; Cart.syncState(localStorage)</div>
+            <div style="color:var(--color-margiela-blue)">&gt; Products.fetch('/Products.json')</div>
+            <div>&gt; DOM.renderCatalog({ items: 24, sort: 'price' })</div>
+            <div style="color:var(--color-text-dim)">&gt; utility.js: Toast notification &amp; validation</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Sebi E-Commerce Storefront</h3>
+          <p class="Card-desc">
+            A responsive, multi-view e-commerce storefront engineered in pure Vanilla JavaScript (ES6+), HTML5, and CSS3 without frontend framework dependencies.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Catalog Ingestion:</strong> Asynchronously loads and parses <code>Products.json</code> with instant client-side category filtering and search queries.</li>
+            <li><strong>Persistent Cart:</strong> Implements <code>LocalStorage</code> synchronization preserving item counts, dynamic quantity increments, and subtotal math across tabs.</li>
+            <li><strong>Modular Architecture:</strong> Engineered a centralized <code>utility.js</code> managing reusable UI toast dispatches, currency formatters, and form validation.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/sebi-ecommerce-project" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <a href="https://suhaibahmd2006-dev.github.io/sebi-ecommerce-project/" target="_blank" rel="noopener noreferrer" style="color:var(--color-margiela-blue)">
+              Live Deployment ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: Instagram AI Automation Bot -->
+      <article class="Card-item" data-lang="Python" data-name="instagram automation bot groq ai llama voice audio threading yt-dlp ffmpeg">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>Automation // Groq AI &amp; Media</span>
+            <span style="color:var(--color-warm-amber)">11+ Commands</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; worker.start(thread_pool=4)</div>
+            <div style="color:var(--color-warm-amber)">&gt; groq_client.chat('llama-3.3-70b', memory=True)</div>
+            <div>&gt; yt_dlp.extract_audio(query) -&gt; FFmpeg(.m4a)</div>
+            <div style="color:var(--color-text-dim)">&gt; fish_audio_tts.synthesize(text, voice='s2')</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Instagram AI Automation Bot</h3>
+          <p class="Card-desc">
+            A 24/7 Python automation engine operating across multi-user Instagram Direct Message group chats, integrating LLM conversation, voice synthesis, and media streaming.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Groq AI Engine:</strong> Connects to Llama 3.3 70B via Groq API with conversation context history for natural group chat responses.</li>
+            <li><strong>Voice Transcoding:</strong> Downloads requested tracks with <code>yt-dlp</code> and dynamically converts them via <code>FFmpeg</code> into native Instagram voice notes.</li>
+            <li><strong>Sequential Processing:</strong> Spawns dedicated background worker threads streaming sequential playlist tracks with rate-limit compliance, automated backoff, and persistent admin authorization and command permission control.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/Instagram_automation_bot" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim)">Python 100%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: User Management REST API -->
+      <article class="Card-item" data-lang="FastAPI" data-name="user management rest api fastapi sqlalchemy sqlite pydantic backend">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>Backend // FastAPI &amp; ORM</span>
+            <span style="color:var(--color-matrix-cyan)">Swagger / ReDoc</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; @app.post('/api/v1/users', status=201)</div>
+            <div style="color:var(--color-margiela-blue)">&gt; response_model=UserResponseSchema</div>
+            <div>&gt; db.commit() // SQLAlchemy Session</div>
+            <div style="color:var(--color-text-dim)">&gt; Depends(get_db) connection lifecycle</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">User Management REST API</h3>
+          <p class="Card-desc">
+            A production-ready RESTful web service built with FastAPI, SQLAlchemy 2.0 ORM, and SQLite, demonstrating enterprise API standards.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Data Integrity:</strong> Utilizes strict Pydantic models for request payload validation, email normalization, and output serialization.</li>
+            <li><strong>Full CRUD Lifecycle:</strong> Implements user creation, single-record lookups, paginated batch queries, updates, and secure deletion.</li>
+            <li><strong>Dependency Injection:</strong> Leverages FastAPI's <code>Depends(get_db)</code> pattern for safe session handling and automated Swagger UI contracts.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/user-management-api" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim)">FastAPI · SQLite</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 4: Paws Heaven Pet Adoption -->
+      <article class="Card-item" data-lang="HTML" data-name="paws heaven pet adoption ict team project github pages html css js">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>Web // Collaborative Project</span>
+            <span style="color:var(--color-botanical-olive)">Team Leadership</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; Role: Team Lead &amp; Frontend Architect</div>
+            <div style="color:var(--color-botanical-olive)">&gt; Scope: Semester Capstone Web Application</div>
+            <div>&gt; Structure: Modular Component Templates</div>
+            <div style="color:var(--color-text-dim)">&gt; GitHub Pages Deployment Pipeline</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Paws Heaven — Pet Adoption</h3>
+          <p class="Card-desc">
+            A multi-page responsive web portal built as a university semester team project. Served as Team Lead directing repository architecture, peer reviews, and deployment.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Engineering Leadership:</strong> Managed Git workflow, structured team feature branches, conducted code reviews, and ensured clean version control milestones.</li>
+            <li><strong>Modular Multi-Page UI:</strong> Built clean navigation spanning Animal Profiles, Adoption Eligibility Application forms, and Donation gateways.</li>
+            <li><strong>Cross-Device Compatibility:</strong> Fluid responsive styling ensuring layout stability across mobile, tablet, and desktop viewports.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/ICT-PROJECT" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <a href="https://suhaibahmd2006-dev.github.io/ICT-PROJECT/" target="_blank" rel="noopener noreferrer" style="color:var(--color-margiela-blue)">
+              Live Deployment ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 5: Hospital Management System -->
+      <article class="Card-item" data-lang="C++" data-name="hospital management system c++ console oops file handling fstream">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>Systems // C++ OOP</span>
+            <span style="color:var(--color-warm-amber)">Disk File I/O</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; class HospitalManager {</div>
+            <div style="color:var(--color-warm-amber)">&gt;   std::fstream patient_db;</div>
+            <div>&gt;   void allocateWard(Patient &amp;p);</div>
+            <div style="color:var(--color-text-dim)">&gt;   void generateMedicalAudit();</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Hospital Management System</h3>
+          <p class="Card-desc">
+            A comprehensive C++ CLI database application designed using strict Object-Oriented Programming (OOP) paradigms for clinical hospital operations.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Object-Oriented Design:</strong> Structured class hierarchies modeling Patient records, Doctor profiles, Diagnostic logs, and Room allocations.</li>
+            <li><strong>File Stream Persistence:</strong> Employs C++ <code>std::fstream</code> to serialize medical audit trails and patient history directly to disk storage.</li>
+            <li><strong>In-Memory Registry:</strong> Features fast querying for bed occupancy, emergency admissions, and patient discharge billing.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/Hospital-Management-System" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim)">C++ 100%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 6: Console Billing System -->
+      <article class="Card-item" data-lang="C++" data-name="billing system c++ console store inventory computer programming">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>Systems // C++ Procedural</span>
+            <span style="color:var(--color-margiela-blue)">Semester-1 Project</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; struct Item { int id; float price; int qty; };</div>
+            <div style="color:var(--color-margiela-blue)">&gt; generateTaxedInvoice(cart);</div>
+            <div>&gt; inventory.decrementStock(item_id, count);</div>
+            <div style="color:var(--color-text-dim)">&gt; file_stream.appendReceipt(invoice);</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Console Billing System</h3>
+          <p class="Card-desc">
+            A C++ console software system built as the Semester-1 Computer Programming Capstone at Bahria University, implementing structured store billing.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Inventory Management:</strong> Real-time product inventory tracking with automated stock deduction upon finalized transactions.</li>
+            <li><strong>Financial Computation:</strong> Accurate tiered calculation of sales tax, bulk order discounts, and formatted terminal receipts.</li>
+            <li><strong>Persistent Audit:</strong> Writes each transaction to persistent disk logs for auditing and store accounting reconciliation.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/Billing-System" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim)">C++ 100%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 7: Random Password Creator -->
+      <article class="Card-item" data-lang="Python" data-name="random password creator python cli security entropy secrets">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>CLI // Security &amp; Entropy</span>
+            <span style="color:var(--color-botanical-olive)">Cryptographic</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; chars = ascii_letters + digits + punctuation</div>
+            <div style="color:var(--color-botanical-olive)">&gt; secrets.choice(chars) for _ in range(length)</div>
+            <div>&gt; Shannon Entropy: High / Unpredictable</div>
+            <div style="color:var(--color-text-dim)">&gt; Zero external packages required</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Random Password Creator</h3>
+          <p class="Card-desc">
+            A Python command-line utility for cryptographically resilient, randomized password generation customized to dynamic user length parameters.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Entropy Maximization:</strong> Combines uppercase, lowercase, numerical digits, and ASCII symbols via Python's system-level entropy source.</li>
+            <li><strong>Lightweight Execution:</strong> Built with zero third-party dependencies using native standard library constructs.</li>
+            <li><strong>Input Validation:</strong> Features protective bounds checking preventing non-integer and negative length buffer faults.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/Random-Password-Creator-Based-On-Your-Length" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim)">Python 100%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 8: Guess The Number Game -->
+      <article class="Card-item" data-lang="Python" data-name="guess the number game python terminal control flow logic">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>Logic // State Loop</span>
+            <span style="color:var(--color-margiela-blue)">Bounded Constraints</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; target = random.randint(1, 100)</div>
+            <div style="color:var(--color-margiela-blue)">&gt; evaluate_distance(guess, target, attempts_left)</div>
+            <div>&gt; hint: Hot / Cold Directional Feedback</div>
+            <div style="color:var(--color-text-dim)">&gt; max_turns = 12 // Hard boundary</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Guess The Number Game</h3>
+          <p class="Card-desc">
+            A Python terminal CLI logic game utilizing strict boundary constraints and nested conditional flows for interactive numeric search reasoning.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Automated Target Generation:</strong> Dynamic pseudorandom target boundary generation bounded strictly between 1 and 100.</li>
+            <li><strong>Directional Search Hints:</strong> Adaptive Hot/Cold distance calculations guiding user binary search logic under attempt limits.</li>
+            <li><strong>Clean Loop Design:</strong> Strict turn validation preventing unhandled input exceptions and game loop bleed-through.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/Guess-The-Number-Game" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim)">Python 100%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 9: Interactive Portfolio & WebGL Platform -->
+      <article class="Card-item" data-lang="HTML" data-name="interactive portfolio webgl platform threejs creative developer architecture">
+        <div class="Card-mockup">
+          <div class="Card-mockup-tag">
+            <span>Portfolio // WebGL Platform</span>
+            <span style="color:var(--color-margiela-blue)">Three.js WebGL</span>
+          </div>
+          <div class="Card-mockup-body">
+            <div>&gt; Real-Time WebGL Context // Procedural 3D</div>
+            <div style="color:var(--color-margiela-blue)">&gt; Procedural Coordinate Grid &amp; Horizon Geometry</div>
+            <div>&gt; Dynamic Pointer &amp; Scroll-Driven Camera Matrix</div>
+            <div style="color:var(--color-text-dim)">&gt; Zero-Dependency Architecture // Native Web Standards</div>
+          </div>
+        </div>
+        <div class="Card-content">
+          <h3 class="Card-title">Interactive Portfolio &amp; WebGL Platform</h3>
+          <p class="Card-desc">
+            An interactive web application exploring real-time 3D spatial environments, performant WebGL rendering, and responsive editorial layout systems.
+          </p>
+          <ul class="Card-bullet-list">
+            <li><strong>Real-Time 3D Rendering:</strong> Procedural Three.js WebGL coordinate grid with a rotating geodesic data lattice, responsive camera projection, and fluid pointer parallax.</li>
+            <li><strong>Modern CSS Architecture:</strong> Fluid responsive typography, modular CSS custom properties, and accessible contrast hierarchy across desktop and mobile screens.</li>
+            <li><strong>Zero-Dependency Footprint:</strong> Built with semantic HTML5, modern CSS, and vanilla ES6+ JavaScript for optimal delivery speed without framework overhead.</li>
+          </ul>
+          <div class="Card-footer">
+            <a href="https://github.com/suhaibahmd2006-dev/Portfolio" target="_blank" rel="noopener noreferrer">
+              GitHub Source ↗
+            </a>
+            <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim)">Three.js · WebGL</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- DEFENSIVE ARCHITECTURE & SECURITY CONTRACTS (.ContentBlock) -->
+  <section class="ContentBlock" id="security">
+    <div class="security-hero-banner">
+      <span class="style-overline">04 // APPLICATION SECURITY &amp; DEFENSIVE ARCHITECTURE</span>
+      <span class="tag tag-security">● Production Hardened Architecture</span>
+    </div>
+
+    <h2 class="BigStatement">
+      Built with defensive engineering. <span class="word-dim">High-assurance reliability — hardened against CSRF, injection attacks, crawler clusters, and unauthorized state mutations.</span>
+    </h2>
+
+    <div class="security-matrix-grid">
+
+      <!-- Security 1: CSRF & Origin Validation -->
+      <div class="security-card">
+        <div class="security-card-header">
+          <div class="security-icon-badge">🛡️</div>
+          <div class="security-card-title">CSRF &amp; Origin Defense</div>
+        </div>
+        <p class="security-card-desc">
+          State-changing requests carrying session cookies enforce strict server-side origin and referer header validation. Mismatched or forged cross-site requests are immediately terminated before processing.
+        </p>
+        <ul class="security-spec-bullets">
+          <li><strong>SameSite Cookies:</strong> Tokens stored in <code>HttpOnly, Secure, SameSite=Lax</code> boundaries.</li>
+          <li><strong>Zero-Trust Headers:</strong> Client-provided authorization headers are never blindly trusted.</li>
+          <li><strong>OAuth State Binding:</strong> Cryptographic state handshake prevents login CSRF during OAuth.</li>
+        </ul>
+      </div>
+
+      <!-- Security 2: XSS Mitigation & Declarative CSP -->
+      <div class="security-card">
+        <div class="security-card-header">
+          <div class="security-icon-badge">🔒</div>
+          <div class="security-card-title">XSS Mitigation &amp; Content Security</div>
+        </div>
+        <p class="security-card-desc">
+          Mitigated inline script execution vectors by engineering a declarative event-driven architecture, enforcing strict Content Security Policy (CSP) headers, and utilizing safe DOM insertion primitives.
+        </p>
+        <ul class="security-spec-bullets">
+          <li><strong>Declarative Dispatcher:</strong> Routes UI events through structured listeners without dynamic code evaluation.</li>
+          <li><strong>DOM Sanitization:</strong> Employs parameterized text nodes and escaped bindings across dynamic views.</li>
+          <li><strong>Subresource Integrity:</strong> Third-party SDK integrations verified via cryptographic SHA-384 hashes.</li>
+        </ul>
+      </div>
+
+      <!-- Security 3: Dual-Layer Sliding-Window Rate Limiting -->
+      <div class="security-card">
+        <div class="security-card-header">
+          <div class="security-icon-badge">⏱️</div>
+          <div class="security-card-title">Layered Sliding-Window Rate Limiting</div>
+        </div>
+        <p class="security-card-desc">
+          Engineered thread-safe sliding-window rate limiting to manage burst traffic, maintain availability, and protect computational backend services against volumetric abuse.
+        </p>
+        <ul class="security-spec-bullets">
+          <li><strong>Per-IP Throttling:</strong> Shields public endpoints against distributed brute-force and rapid endpoint probing.</li>
+          <li><strong>Account-Level Quotas:</strong> Safeguards computationally intensive AI summarization routes from resource exhaustion.</li>
+          <li><strong>Dynamic Cache Eviction:</strong> Automatically evicts stale sliding-window records to maintain memory efficiency.</li>
+        </ul>
+      </div>
+
+      <!-- Security 4: Cloudflare Turnstile & Bot Deterrence -->
+      <div class="security-card">
+        <div class="security-card-header">
+          <div class="security-icon-badge">☁️</div>
+          <div class="security-card-title">Cloudflare Turnstile Gateway</div>
+        </div>
+        <p class="security-card-desc">
+          Integrated Cloudflare Turnstile cryptographic verification on intake and submission endpoints, blocking automated scraper bots and headless browser abuse with zero user friction.
+        </p>
+        <ul class="security-spec-bullets">
+          <li><strong>Backend Validation:</strong> Verifies challenge tokens against Cloudflare verification endpoints before ingestion.</li>
+          <li><strong>Frictionless UX:</strong> Automated non-interactive challenges replacing disruptive legacy image CAPTCHAs.</li>
+          <li><strong>Intake Defense:</strong> Rejects unauthenticated traffic early in the pipeline before initiating backend workloads.</li>
+        </ul>
+      </div>
+
+      <!-- Security 5: Token Encryption & Cryptographic Primitives -->
+      <div class="security-card">
+        <div class="security-card-header">
+          <div class="security-icon-badge">🔑</div>
+          <div class="security-card-title">Authenticated Data Encryption</div>
+        </div>
+        <p class="security-card-desc">
+          Sensitive OAuth access tokens and third-party credentials are encrypted at rest using industry-standard authenticated encryption primitives (AES / Fernet with HMAC verification).
+        </p>
+        <ul class="security-spec-bullets">
+          <li><strong>At-Rest Encryption:</strong> Database records store ciphertext, protecting sensitive credentials against storage dumps.</li>
+          <li><strong>Authenticated Integrity:</strong> Cryptographic MAC verification detects and rejects any payload tampering.</li>
+          <li><strong>Key Isolation:</strong> Cryptographic master keys are segregated into isolated environment configurations.</li>
+        </ul>
+      </div>
+
+      <!-- Security 6: IDOR Protection & HTTP Security Headers -->
+      <div class="security-card">
+        <div class="security-card-header">
+          <div class="security-icon-badge">⚡</div>
+          <div class="security-card-title">Tenant Isolation &amp; Security Headers</div>
+        </div>
+        <p class="security-card-desc">
+          Enforces strict authorization boundaries on every data request by binding user identity to authenticated session state, preventing Insecure Direct Object References (IDOR).
+        </p>
+        <ul class="security-spec-bullets">
+          <li><strong>Row-Level Scoping:</strong> Queries strictly isolate records by verified tenant identity across all data operations.</li>
+          <li><strong>Hardened HTTP Headers:</strong> Deploys <code>nosniff</code>, <code>DENY</code>, and <code>strict-origin-when-cross-origin</code>.</li>
+          <li><strong>Transport Security:</strong> Strict HTTPS HSTS enforcement with preload directives across all domains.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STRATEGY & CAPABILITIES MATRIX (.Texts) -->
+  <section class="ContentBlock" id="strategy">
+    <span class="style-overline">STRATEGY // ARCHITECTURE</span>
+    <h2 class="BigStatement">
+      Code as a sensory medium. <span class="word-dim">Zero framework bloat. Measurable velocity.</span>
+    </h2>
+
+    <div class="Texts-grid">
+      <div class="Texts-item">
+        <h3>Frontend Systems</h3>
+        <p>Vanilla DOM performance, custom CSP event dispatchers, responsive layout math, Three.js WebGL scene integration, and accessible high-contrast WCAG design.</p>
+        <div class="Texts-badges">
+          <span class="Texts-badge">JavaScript ES6+</span>
+          <span class="Texts-badge">Three.js / WebGL</span>
+          <span class="Texts-badge">CSS Grid</span>
+          <span class="Texts-badge">Tailwind CLI</span>
+          <span class="Texts-badge">PWA / Service Workers</span>
+        </div>
+      </div>
+
+      <div class="Texts-item">
+        <h3>Systems &amp; Logic</h3>
+        <p>Procedural and object-oriented architecture in C++, memory layouts, file stream serialization, array manipulations, and discrete digital logic design.</p>
+        <div class="Texts-badges">
+          <span class="Texts-badge">C++ (OOP)</span>
+          <span class="Texts-badge">Memory Management</span>
+          <span class="Texts-badge">File Streams</span>
+          <span class="Texts-badge">Proteus Simulation</span>
+          <span class="Texts-badge">Algorithms</span>
+        </div>
+      </div>
+
+      <div class="Texts-item">
+        <h3>Backend &amp; Cloud</h3>
+        <p>Type-safe asynchronous REST API services with FastAPI, SQLAlchemy 2.0 ORM persistence, SQLite and PostgreSQL database drivers, and Vercel serverless functions.</p>
+        <div class="Texts-badges">
+          <span class="Texts-badge">Python 3</span>
+          <span class="Texts-badge">FastAPI</span>
+          <span class="Texts-badge">SQLAlchemy 2.0</span>
+          <span class="Texts-badge">Pydantic Schemas</span>
+          <span class="Texts-badge">PostgreSQL (pg8000)</span>
+        </div>
+      </div>
+
+      <div class="Texts-item">
+        <h3>AI &amp; Commercial SDKs</h3>
+        <p>Multi-model LLM chat and summarization orchestration, text-to-speech audio voice note pipelines, localized payment checkout gateways, and anti-bot verification.</p>
+        <div class="Texts-badges">
+          <span class="Texts-badge">Paddle.js v2 SDK</span>
+          <span class="Texts-badge">Cloudflare Turnstile</span>
+          <span class="Texts-badge">Groq AI (Llama 3.3)</span>
+          <span class="Texts-badge">Fish Audio TTS</span>
+          <span class="Texts-badge">SheetJS (.xlsx)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAJECTORY & CHRONOLOGY (.Trajectory-table) -->
+  <section class="ContentBlock" id="trajectory">
+    <span class="style-overline">ACADEMIC &amp; PROFESSIONAL TRAJECTORY</span>
+    <h2 style="font-size:clamp(2rem, 3.5vw, 3rem); font-weight:700; margin-bottom:2rem">The Foundations</h2>
+
+    <div class="Trajectory-table">
+      <div class="Trajectory-row">
+        <span class="Trajectory-date">2024 — Present</span>
+        <div class="Trajectory-title">BS Information Technology</div>
+        <div class="Trajectory-inst">Bahria University Islamabad</div>
+      </div>
+
+      <div class="Trajectory-row">
+        <span class="Trajectory-date">2024 — 2025</span>
+        <div class="Trajectory-title">Front-End Development Trainee (PITP)</div>
+        <div class="Trajectory-inst">Sukkur IBA University · Pakistan IT Park</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLID OPAQUE FOOTER (.Footer) -->
+  <footer class="Footer" id="contact">
+    <span class="style-overline">INITIATE TRANSMISSION // CONTACT</span>
+    <h2 class="Footer-statement">
+      Have a project or vision? Let's engineer something memorable.
+    </h2>
+
+    <!-- Honest Direct Transmission Form -->
+    <div class="Footer-contact-form">
+      <h3>Direct Transmission</h3>
+      <div id="formMsg" class="form-msg" role="alert"></div>
+
+      <div class="form-input-group">
+        <label for="fname">Your Name</label>
+        <input type="text" id="fname" placeholder="Alex Morgan" required/>
+      </div>
+
+      <div class="form-input-group">
+        <label for="femail">Your Email</label>
+        <input type="email" id="femail" placeholder="alex@company.com" required/>
+      </div>
+
+      <div class="form-input-group">
+        <label for="fsubject">Subject</label>
+        <input type="text" id="fsubject" placeholder="Project Inquiry / Engineering Role"/>
+      </div>
+
+      <div class="form-input-group">
+        <label for="fmessage">Details</label>
+        <textarea id="fmessage" rows="4" placeholder="Hi Suhaib, I explored your MeetFlow AI case study, security architecture, and repositories and would like to connect regarding..." required></textarea>
+      </div>
+
+      <button type="button" class="Button Button--primary" style="width:100%; justify-content:center;" onclick="submitTransmission()">
+        <span>Transmit Message</span>
+        <span class="IconAnimatedArrow IconAnimatedArrow--animated" aria-hidden="true">
+          <svg width="12" height="13" fill="none" viewBox="0 0 12 13">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="M1 11.5 11 1.5M11 1.5H3.5M11 1.5v7.5"/>
+          </svg>
+        </span>
+      </button>
+
+      <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-text-dim);margin-top:0.85rem;text-align:center;">
+        * Prepares transmission directly in your native email client to suhaibahmd2006@gmail.com
+      </div>
+    </div>
+
+    <div class="Footer-meta-grid">
+      <div class="Footer-col">
+        <div class="Footer-col-title">Navigation</div>
+        <a href="#hero">Opening Experience</a>
+        <a href="#flagship">MeetFlow AI</a>
+        <a href="#statement">Manifesto</a>
+        <a href="#works">Selected Works</a>
+        <a href="#security">Security Contracts</a>
+        <a href="#strategy">Architecture</a>
+        <a href="#trajectory">Trajectory</a>
+      </div>
+
+      <div class="Footer-col">
+        <div class="Footer-col-title">Networks</div>
+        <a href="https://github.com/suhaibahmd2006-dev" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+        <a href="https://www.linkedin.com/in/suhaib-ahmed-dev/" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a>
+        <a href="mailto:suhaibahmd2006@gmail.com">Direct Email ↗</a>
+        <a href="https://meetflowai-mu.vercel.app/" target="_blank" rel="noopener noreferrer">MeetFlow AI Live ↗</a>
+      </div>
+
+      <div class="Footer-col">
+        <div class="Footer-col-title">Coordinates</div>
+        <div style="font-family:var(--font-mono);font-size:0.85rem;color:var(--color-text-muted);line-height:1.8">
+          Islamabad, Pakistan<br/>
+          Timezone: PKT (UTC+5)<br/>
+          Available for Global Opportunities
+        </div>
+      </div>
+    </div>
+
+    <div class="Footer-bottom-bar">
+      <div>© 2025 Suhaib Ahmed.</div>
+      <button class="Button" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="padding:0.5rem 1.2rem; font-size:0.78rem;">
+        <span>Return to top ↑</span>
+      </button>
+    </div>
+  </footer>
+
+</main>
+
+<!-- THREE.JS INTENSIVE DEVELOPER CYBER-MATRIX SCRIPT -->
+<script>
+/* ============================================================
+   THREE.JS REAL-TIME DEVELOPER CYBER-MATRIX & WIREFRAME HORIZON
+   ============================================================ */
+let scene, camera, renderer, matrixGroup, gridMesh, torusMesh, dataNodes;
+let targetCameraY = 0;
+let targetCameraZ = 6;
+let mouseX = 0, mouseY = 0;
+
+function initDeveloperMatrix() {
+  const canvas = document.getElementById('unified-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  // Scene & Fog
+  scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x050505, 0.08);
+
+  // Camera
+  camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
+  camera.position.set(0, 1.2, 6);
+
+  // Renderer
+  renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    alpha: true,
+    antialias: true,
+    powerPreference: 'high-performance'
+  });
+  renderer.setSize(w, h);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  // Lighting
+  const ambient = new THREE.AmbientLight(0x0d1210, 2.5);
+  scene.add(ambient);
+
+  const blueKey = new THREE.DirectionalLight(0x4B80F2, 4.0);
+  blueKey.position.set(6, 8, 4);
+  scene.add(blueKey);
+
+  const amberRim = new THREE.DirectionalLight(0xD8AF65, 2.2);
+  amberRim.position.set(-6, -4, -3);
+  scene.add(amberRim);
+
+  matrixGroup = new THREE.Group();
+  scene.add(matrixGroup);
+
+  // 1. Perspective Wireframe Cyber-Terrain Grid
+  const gridGeom = new THREE.PlaneGeometry(36, 36, 40, 40);
+  const pos = gridGeom.attributes.position;
+  for (let i = 0; i < pos.count; i++) {
+    const vx = pos.getX(i);
+    const vy = pos.getY(i);
+    const vz = Math.sin(vx * 0.4) * Math.cos(vy * 0.4) * 0.4;
+    pos.setZ(i, vz);
+  }
+  gridGeom.computeVertexNormals();
+
+  const gridMat = new THREE.MeshBasicMaterial({
+    color: 0x4B80F2,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.16
+  });
+  gridMesh = new THREE.Mesh(gridGeom, gridMat);
+  gridMesh.rotation.x = -Math.PI / 2.3;
+  gridMesh.position.set(0, -2.2, -2);
+  matrixGroup.add(gridMesh);
+
+  // 2. Central Dark-Chrome Geodesic Coordinate Torus / Icosahedron Core
+  const coreGroup = new THREE.Group();
+  matrixGroup.add(coreGroup);
+
+  const torusGeom = new THREE.TorusGeometry(1.8, 0.45, 16, 60);
+  const torusMat = new THREE.MeshStandardMaterial({
+    color: 0x08090a,
+    roughness: 0.2,
+    metalness: 0.9,
+    wireframe: false
+  });
+  torusMesh = new THREE.Mesh(torusGeom, torusMat);
+  coreGroup.add(torusMesh);
+
+  const torusWireGeom = new THREE.TorusGeometry(1.82, 0.46, 12, 36);
+  const torusWireMat = new THREE.MeshBasicMaterial({
+    color: 0x4B80F2,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.35
+  });
+  const torusWire = new THREE.Mesh(torusWireGeom, torusWireMat);
+  coreGroup.add(torusWire);
+
+  // Inner Icosahedron Quantum Core
+  const icoGeom = new THREE.IcosahedronGeometry(0.9, 1);
+  const icoMat = new THREE.MeshStandardMaterial({
+    color: 0x11161d,
+    emissive: 0x08121f,
+    wireframe: true,
+    roughness: 0.1,
+    metalness: 1.0
+  });
+  const icoMesh = new THREE.Mesh(icoGeom, icoMat);
+  coreGroup.add(icoMesh);
+
+  // 3. Floating Telemetry Data Nodes
+  const nodeCount = 320;
+  const nodePos = new Float32Array(nodeCount * 3);
+  for (let i = 0; i < nodeCount * 3; i += 3) {
+    nodePos[i] = (Math.random() - 0.5) * 20;
+    nodePos[i + 1] = (Math.random() - 0.5) * 16;
+    nodePos[i + 2] = (Math.random() - 0.5) * 14;
+  }
+  const nodeGeom = new THREE.BufferGeometry();
+  nodeGeom.setAttribute('position', new THREE.BufferAttribute(nodePos, 3));
+
+  const nodeMat = new THREE.PointsMaterial({
+    size: 0.05,
+    color: 0x4B80F2,
+    transparent: true,
+    opacity: 0.7,
+    blending: THREE.AdditiveBlending
+  });
+  dataNodes = new THREE.Points(nodeGeom, nodeMat);
+  scene.add(dataNodes);
+
+  window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+  if (!camera || !renderer) return;
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+}
+
+// Mouse coordinates
+document.addEventListener('mousemove', e => {
+  mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+  mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+});
+
+// Scroll Camera Traversal & Footer Opacity Failsafe
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+  const scrollFrac = maxScroll > 0 ? scrollY / maxScroll : 0;
+
+  targetCameraY = 1.2 - scrollFrac * 5.0;
+  targetCameraZ = 6 - scrollFrac * 2.5;
+
+  const header = document.getElementById('header');
+  if (header) header.classList.toggle('scrolled', scrollY > 40);
+
+  // Fade out 3D canvas container gracefully when reaching the footer
+  const canvasContainer = document.getElementById('unified-canvas-container');
+  if (canvasContainer) {
+    if (scrollFrac > 0.85) {
+      canvasContainer.style.opacity = Math.max(0, 1 - (scrollFrac - 0.85) * 6.6);
+    } else {
+      canvasContainer.style.opacity = 1;
+    }
+  }
+});
+
+// Render Loop
+let clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+
+  const delta = clock.getDelta();
+  const time = clock.getElapsedTime();
+
+  if (torusMesh && torusMesh.parent) {
+    torusMesh.parent.rotation.x = Math.sin(time * 0.3) * 0.35 + (mouseY * 0.2);
+    torusMesh.parent.rotation.y += 0.22 * delta;
+    torusMesh.parent.rotation.z = Math.cos(time * 0.25) * 0.2;
+    torusMesh.parent.position.x += ((mouseX * 0.5) - torusMesh.parent.position.x) * 0.05;
+    torusMesh.parent.position.y += ((-mouseY * 0.4) - torusMesh.parent.position.y) * 0.05;
+  }
+
+  if (gridMesh) {
+    gridMesh.position.z = -2 + Math.sin(time * 0.2) * 0.3;
+  }
+
+  if (dataNodes) {
+    dataNodes.rotation.y = time * 0.02;
+  }
+
+  if (camera) {
+    camera.position.y += (targetCameraY - camera.position.y) * 0.08;
+    camera.position.z += (targetCameraZ - camera.position.z) * 0.08;
+    camera.lookAt(0, targetCameraY * 0.4, 0);
+  }
+
+  if (renderer && scene && camera) {
+    renderer.render(scene, camera);
+  }
+}
+
+try {
+  initDeveloperMatrix();
+  animate();
+} catch (e) {
+  console.warn('Three.js matrix initialization:', e);
+}
+
+/* ============================================================
+   UI & INTERACTION SCRIPTS
+   ============================================================ */
+// Custom hardware cursor
+const cursor = document.getElementById('custom-cursor');
+if (cursor && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  document.querySelectorAll('a, button, input, textarea, .Card-item, .security-card').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+  });
+}
+
+// Mobile Nav Controller
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobile-nav');
+
+function openMob() {
+  if (!mob) return;
+  mob.classList.add('open');
+  if (ham) ham.classList.add('is-active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMob() {
+  if (!mob) return;
+  mob.classList.remove('open');
+  if (ham) ham.classList.remove('is-active');
+  document.body.style.overflow = '';
+}
+
+if (ham && mob) {
+  ham.addEventListener('click', () => {
+    if (mob.classList.contains('open')) {
+      closeMob();
+    } else {
+      openMob();
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mob.classList.contains('open')) {
+      closeMob();
+    }
+  });
+}
+
+// Touch Interaction for 3D Cyber-Matrix on Mobile Devices
+window.addEventListener('touchmove', e => {
+  if (e.touches && e.touches.length > 0) {
+    mouseX = (e.touches[0].clientX / window.innerWidth - 0.5) * 1.5;
+    mouseY = (e.touches[0].clientY / window.innerHeight - 0.5) * 1.5;
+  }
+}, { passive: true });
+
+// Project Search & Filtering
+let activeLang = 'all';
+function filterByLang(btn, lang) {
+  document.querySelectorAll('.Cards-filter-bar .Button').forEach(b => {
+    b.classList.remove('Button--primary');
+  });
+  btn.classList.add('Button--primary');
+  activeLang = lang;
+  filterProjects();
+}
+
+function filterProjects() {
+  const query = (document.getElementById('projSearch')?.value || '').toLowerCase().trim();
+  document.querySelectorAll('.Card-item').forEach(card => {
+    const cardLang = card.dataset.lang || '';
+    const cardName = (card.dataset.name || '').toLowerCase();
+    const langMatch = (activeLang === 'all' || cardLang === activeLang);
+    const searchMatch = !query || cardName.includes(query);
+    card.style.display = (langMatch && searchMatch) ? '' : 'none';
+  });
+}
+
+// Honest Direct Transmission Contact Form Handler
+function submitTransmission() {
+  const fn = document.getElementById('fname')?.value.trim();
+  const em = document.getElementById('femail')?.value.trim();
+  const sub = document.getElementById('fsubject')?.value.trim() || 'Portfolio Project Transmission';
+  const msg = document.getElementById('fmessage')?.value.trim();
+  const statusEl = document.getElementById('formMsg');
+
+  if (!statusEl) return;
+  statusEl.className = 'form-msg';
+
+  if (!fn || !em || !msg) {
+    statusEl.className = 'form-msg error';
+    statusEl.textContent = 'Please complete all required fields: Name, Email, and Details.';
+    return;
+  }
+  if (!/\S+@\S+\.\S+/.test(em)) {
+    statusEl.className = 'form-msg error';
+    statusEl.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  statusEl.className = 'form-msg success';
+  statusEl.innerHTML = 'Preparing transmission to <strong>suhaibahmd2006@gmail.com</strong> in your native mail client...';
+
+  const body = `Hi Suhaib,\n\nName: ${fn}\nEmail: ${em}\n\nDetails:\n${msg}\n\n---\nSent via Portfolio Direct Transmission Form`;
+  const mailUrl = `mailto:suhaibahmd2006@gmail.com?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+
+  setTimeout(() => {
+    window.location.href = mailUrl;
+  }, 400);
+}
+</script>
+</body>
+</html>
